@@ -4,9 +4,11 @@ class Node():
         self.left = None
         self.right = None
 
+
 class Binary_search_tree():
     def __init__(self):
         self.root = None
+
 
     def insert(self, value):
         New_node = Node(value)
@@ -30,6 +32,7 @@ class Binary_search_tree():
                     temp.right = New_node
                     return True
                 temp = temp.right      
+
 
     def contains(self, value):
         temp = self.root

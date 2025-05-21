@@ -111,7 +111,6 @@ My_tree.insert(13)
 My_tree.insert(15)
 
 
-
 print(My_tree.r_contains(20))
 
 

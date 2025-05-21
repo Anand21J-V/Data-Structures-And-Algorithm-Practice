@@ -94,23 +94,42 @@ class Binary_search_tree():
                 current_node.right = self.__delete_node(current_node.right, sub_tree_min)
         return current_node
     
-        
+
+
 
     def delete_node(self, value):
         self.__delete_node(self.root, value) 
+
+
+
+
+    def BFS(self):
+        current_node = self.root
+        queue = []
+        results = []
+        queue.append(current_node)
+
+        while len(queue) > 0:
+            current_node = queue.pop(0)
+            results.append(current_node.value)
+            if current_node.left is not None:
+                queue.append(current_node.left)
+            if current_node.right is not None:
+                queue.append(current_node.right)
+        return results
+        
         
 
-My_tree = Binary_search_tree()
-My_tree.insert(2)
-My_tree.insert(1)
-My_tree.insert(3)
-My_tree.insert(12)
-My_tree.insert(10)
-My_tree.insert(6)
-My_tree.insert(13)
-My_tree.insert(15)
+my_tree = Binary_search_tree()
+my_tree.insert(47)
+my_tree.insert(21)
+my_tree.insert(76)
+my_tree.insert(18)
+my_tree.insert(27)
+my_tree.insert(52)
+my_tree.insert(82)
 
 
-print(My_tree.r_contains(20))
+print(my_tree.BFS())
 
 

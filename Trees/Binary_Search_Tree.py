@@ -128,7 +128,34 @@ class Binary_search_tree():
                 traverse(current_node.right)
 
         traverse(self.root)
-        return result            
+        return result   
+
+
+    def DFS_postorder(self):
+        result = []
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            if current_node.right is not None:
+                traverse(current_node.right)
+            result.append(current_node.value)
+
+        traverse(self.root)
+        return result   
+
+
+    def DFS_inorder(self):
+        result = []
+        def traverse(current_node):
+            if current_node.left is not None:
+                traverse(current_node.left)
+            result.append(current_node.value)
+            if current_node.right is not None:
+                traverse(current_node.right)
+
+        traverse(self.root)
+        return result                     
+
 
 
 
@@ -144,6 +171,6 @@ my_tree.insert(52)
 my_tree.insert(82)
 
 
-print(my_tree.DFS_preorder())
+print(my_tree.DFS_inorder())
 
 

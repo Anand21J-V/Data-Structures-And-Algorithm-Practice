@@ -1,0 +1,56 @@
+🔑 How to Know It’s a Sliding Window Problem at First Sight?
+✅ Look for these clues in the problem statement:
+🔍 1. Substring / Subarray / Subsequence Involving a Range
+If the question asks you to operate on a contiguous portion of a string or array — like:
+
+“Find the longest/shortest substring/subarray that satisfies some condition”
+
+“Find the maximum/minimum sum of any subarray of size k”
+
+Example prompts:
+
+"Find the longest substring without repeating characters."
+"Find the smallest subarray with a sum greater than a target."
+"Find the maximum number of vowels in a substring of length k."
+
+🧠 That’s a strong clue → Sliding Window
+
+🔍 2. Fixed-size or Variable-size Window
+If the question says: "length k" → use Fixed-size Sliding Window
+
+If the length isn’t fixed and you're growing/shrinking the window → use Variable-size Sliding Window
+
+🔍 3. You need to examine all substrings but can't afford O(n²)
+If brute-force would require you to check all substrings and time is tight (e.g. len(s) is large), then:
+➡️ The problem probably wants a sliding window solution with O(n) complexity.
+
+🔍 4. The goal involves tracking or optimizing something over a range
+Like:
+
+max/min sum
+
+max/min length
+
+count of unique elements
+
+frequency of characters
+
+If you're being asked to track something dynamically as the window moves — that's a classic sliding window clue.
+
+🧠 Key Mindset:
+If you need to process a range of elements that moves through the input one step at a time, and you're optimizing or checking a condition, think Sliding Window.
+
+✅ In your specific problem:
+"Length of the longest substring without repeating characters"
+
+Clues:
+
+"Substring" ➝ contiguous → candidate for window
+
+"Longest" ➝ optimize window size
+
+"No repeating characters" ➝ we need to track frequency while expanding and shrinking the window
+
+Brute-force O(n²) is too slow → needs O(n)
+
+✅ Boom. All signs point to Sliding Window with HashMap (to track characters).
